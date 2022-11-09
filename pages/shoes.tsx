@@ -94,7 +94,7 @@ const kobe_shoes = [
   },
   {
     id: 10,
-    image: "",
+    image: "../public/images/ball.svg",
     name: "Zoom Kobe X High",
     releasteDate: "2021-01-01",
     season: "All",
@@ -104,7 +104,7 @@ const kobe_shoes = [
   {
     id: 11,
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg",
+      "../public/images/test.jpg",
     name: "Zoom Kobe XI",
     releasteDate: "2021-01-01",
     season: "All",
@@ -128,22 +128,34 @@ function Shoes() {
         columnClassName="my-masonry-grid_column"
       >
         {kobe_shoes.map((shoe) => (
-          <div className="max-w-[400px]">
-            <div className="group relative block bg-gray-900 rounded-md">
-              <img
-                className="absolute rounded-md inset-0 h-full w-full object-cover group-hover:opacity-50"
-                src={shoe.image}
-                alt={shoe.name}
-              />
-              <div className="relative p-2">
-                <div className="mt-40">
-                  <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                    <div className="p-2">
-                      <p className="text-sm text-white">{shoe.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          // <div className="max-w-[400px]">
+          //   <div className="group relative block bg-gray-900 rounded-md">
+          //     <img
+          //       className="absolute rounded-md inset-0 h-full w-full object-cover group-hover:opacity-50"
+          //       src={shoe.image}
+          //       alt={shoe.name}
+          //     />
+          //     <div className="relative p-2">
+          //       <div className="mt-40">
+          //         <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+          //           <div className="p-2">
+          //             <p className="text-sm text-white">{shoe.description}</p>
+          //           </div>
+          //         </div>
+          //       </div>
+          //     </div>
+          //   </div>
+          // </div>
+          <div className="shoeCard" key={shoe.id}>
+            <div
+              className="shoeCardWrapper flex flex-col p-4"
+              style={{ backgroundImage: `url(${shoe.image})` }}
+              onMouseLeave={() => {
+                // this.style.backgroundImage = `none`;
+              }}
+            >
+              {shoe.name}
+              <div>{shoe.description}</div>
             </div>
           </div>
         ))}
