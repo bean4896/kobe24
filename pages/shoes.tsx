@@ -1,6 +1,6 @@
 import React from "react";
 import Masonry from "react-masonry-css";
-
+import SwiperModal from '../components/ui/SwiperModal';
 const kobe_shoes = [
   {
     id: 1,
@@ -121,7 +121,8 @@ function Shoes() {
   };
 
   return (
-    <div className="flex justify-center w-full my-10">
+     <>
+    {/* <div className="flex justify-center w-full my-10">
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
@@ -160,7 +161,11 @@ function Shoes() {
           </div>
         ))}
       </Masonry>
+    </div> */}
+    <div className="w-full m-auto ">
+            <SwiperModal />
     </div>
+    </>
   );
 }
 
