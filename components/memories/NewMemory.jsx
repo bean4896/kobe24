@@ -30,8 +30,8 @@ function NewMemory(props) {
     };
 
     //
-    console.log(memoryData, `../public/images/${filename}`);
-    // props.onAddMemory(memoryData);
+    // console.log(memoryData, `../public/images/${filename}`);
+    props.onAddMemory(memoryData);
   }
 
   return (
