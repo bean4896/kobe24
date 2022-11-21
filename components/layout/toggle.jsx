@@ -1,19 +1,18 @@
-
-import React from 'react';
-import { useTheme } from 'next-themes';
-import { useEffect } from 'react';
+import React from "react";
+import { useTheme } from "next-themes";
+import { useEffect } from "react";
 
 const Toggle = () => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setTheme('light');
+    setTheme("light");
   }, []);
   return (
-    <div className='ml-4'>
-      {theme === 'dark' ? (
+    <div className="ml-4">
+      {theme === "dark" ? (
         <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="btn text-yellow-400 dark:text-yellow-400 bg-yellow-900 shadow-none p-1 focus:outline-none text-lg rounded-md outline-none ring-transparent cursor-pointer"
         >
           <svg
@@ -33,7 +32,7 @@ const Toggle = () => {
         </button>
       ) : (
         <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="btn text-purple-900 bg-purple-400 focus:outline-none shadow-none p-1 text-lg rounded-md outline-none ring-transparent cursor-pointer"
         >
           <svg
@@ -55,7 +54,5 @@ const Toggle = () => {
     </div>
   );
 };
-
-
 
 export default Toggle;

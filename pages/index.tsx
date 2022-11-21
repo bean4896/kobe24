@@ -13,7 +13,7 @@ function Home(props) {
     <Fragment>
     <div className="max-w-[940px] mt-10 m-auto">
       <Head>
-        <title>Next Memories</title>
+        <title>Kobe Bryant Memories</title>
         <meta name="description"
          content="Next Memories" />
         <link rel="icon" href="/favicon.ico" />
@@ -25,7 +25,6 @@ function Home(props) {
 }
 
 export async function getStaticProps() {
-    
   const client = await connectToDatabase();
   const db = client.db();
   const memoriesCollection = db.collection('memories');

@@ -18,15 +18,15 @@ function memoryItem(props) {
   var date_retire = Date.parse(date1_s);
   var dateItem_unix = Date.parse(date2_s);
 
-  console.log(date_retire);
-  console.log(dateItem_unix);
+  // console.log(date_retire);
+  // console.log(dateItem_unix);
 
   return (
     <Card>
       <div className="mx-auto">
         <Image
           loader={myLoader}
-          className="w-auto rounded-lg relative bottom-6"
+          className="w-full rounded-lg relative bottom-6"
           src={props.image}
           alt={props.title}
           width={500}
@@ -63,7 +63,7 @@ function memoryItem(props) {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_216_6)">
+                  <g clipPath="url(#clip0_216_6)">
                     <path
                       d="M87.53 284L41 237.47V172.13L62.78 150.35L41 128.57V63.23L84.56 20H152.87L196.43 63.56V128.57L174.32 150.68L196.1 172.46V237.47L149.57 284H87.53ZM131.09 172.13H104.69L86.87 191.6V220.31L104.69 240.44H131.09L149.24 220.31V191.6L131.09 172.13ZM131.09 60.26H104.69L86.87 79.73V108.44L104.69 128.57H131.09L149.24 108.44V79.73L131.09 60.26Z"
                       fill="#FACC15"
