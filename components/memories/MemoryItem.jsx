@@ -13,8 +13,6 @@ function memoryItem(props) {
   var date1_s = date1.replace(/\-/g, "/");
   var date2_s = date2.replace(/\-/g, "/");
 
-  var date1_s = date1.replace("-", "/");
-
   var date_retire = Date.parse(date1_s);
   var dateItem_unix = Date.parse(date2_s);
 
