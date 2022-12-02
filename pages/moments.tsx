@@ -24,18 +24,18 @@ const Moments = (props) => {
 
   const modalHandler = () => {
     setIsAddingMoment(!isAddingMoment);
-  };
+  }; 
 
   return (
     <>
-      <div className="m-auto">
+      <div className="w-full mx-auto">
         <button className="momentBtn" onClick={modalHandler}>
           Add Moment
         </button>
         {isAddingMoment && (
           <NewMoment onClose={modalHandler} onAddMoment={addMomentHandler} />
         )}
-        <MomentsList moments={props.moments} />
+        <MomentsList moments={props.moments} /> 
       </div>
     </>
   );
