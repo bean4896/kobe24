@@ -1,7 +1,7 @@
 import NewMoment from "../components/moments/NewMoment";
 import { useState } from "react";
 import MomentsList from "../components/moments/MomentsList";
-import { connectToDatabase } from '../lib/db';
+import { connectToDatabase } from "../lib/db";
 
 const Moments = (props) => {
   const [isAddingMoment, setIsAddingMoment] = useState(false);
@@ -22,35 +22,42 @@ const Moments = (props) => {
     // router.push("/");
   }
 
+  const modalHandler = () => {
+    setIsAddingMoment(!isAddingMoment);
+  };
+
   return (
     <>
-      <button onClick={() => setIsAddingMoment(!isAddingMoment)}>
-        Add Moment
-      </button>
-      {isAddingMoment && <NewMoment onAddMoment={addMomentHandler} />}
-      <MomentsList moments={props.moments} />
+      <div className="m-auto">
+        <button className="momentBtn" onClick={modalHandler}>
+          Add Moment
+        </button>
+        {isAddingMoment && (
+          <NewMoment onClose={modalHandler} onAddMoment={addMomentHandler} />
+        )}
+        <MomentsList moments={props.moments} />
+      </div>
     </>
   );
 };
 
 export async function getStaticProps() {
-    const client = await connectToDatabase();
-    const db = client.db();
-    const momentsCollection = db.collection('moments');
-    const moments = await momentsCollection.find().toArray();
-    client.close();
-  
-    return {
-      props: {
-        moments: moments.map(moment => ({
-          title: moment.title,
-          image: moment.image,
-          description: moment.description,
-          id: moment._id.toString()
-        }))
-      }
-    }
-  }
+  const client = await connectToDatabase();
+  const db = client.db();
+  const momentsCollection = db.collection("moments");
+  const moments = await momentsCollection.find().toArray();
+  client.close();
 
+  return {
+    props: {
+      moments: moments.map((moment) => ({
+        title: moment.title,
+        image: moment.image,
+        description: moment.description,
+        id: moment._id.toString(),
+      })),
+    },
+  };
+}
 
 export default Moments;
