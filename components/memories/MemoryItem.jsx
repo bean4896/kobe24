@@ -7,7 +7,7 @@ const myLoader = ({ src, width, quality }) => {
 
 function memoryItem(props) {
   // check date format
-  var date1 = "2006-04-30";
+  var date1 = "2007-01-01";
   var date2 = props.date;
 
   var date1_s = date1.replace(/\-/g, "/");
