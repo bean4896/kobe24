@@ -73,7 +73,7 @@ function NewMoment(props) {
     <>
       <div className="backdrop" onClick={props.onClose}></div>
       <div className="modalMoment">
-        <div className="bg-white dark:bg-[#1e1e1e] shadow-lg rounded-lg max-w-[90vw] m-auto">
+        <div className="bg-white dark:bg-[#1e1e1e] shadow-lg rounded-lg w-11/12 max-w-[500px] m-auto">
           {/*close icon*/}
           <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
             <h3 className="text-3xl font-semibold">Add Mo</h3>
@@ -140,7 +140,11 @@ function NewMoment(props) {
                     </label>
                   </div>
 
-                  <img className="rounded-md max-h-[100px]" src={imageSrc} alt={imageSrc} />
+                  <img
+                    className="rounded-md max-h-[100px]"
+                    src={imageSrc}
+                    alt={imageSrc}
+                  />
                   {/* {imageSrc && !uploadData && (
               <p>
                 <button>Upload Files</button>

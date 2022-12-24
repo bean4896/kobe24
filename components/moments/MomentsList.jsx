@@ -1,20 +1,18 @@
 import MomentItem from "./MomentItem";
-import Masonry from "react-masonry-css";
+import Marquee from "react-fast-marquee";
+import { useTheme } from "next-themes";
 
 const MomentsList = (props) => {
-  const breakpointColumnsObj = {
-    default: 3,
-    1100: 3,
-    700: 2,
-    500: 1,
-  };
+  let marqueeBg = "";
+  const currentTheme = useTheme();
+  if (currentTheme.theme === "dark") {
+    marqueeBg = [0, 0, 0];
+  } else {
+    marqueeBg = [255, 255, 255];
+  }
   return (
-    <div className="momentList max-w-[1000px] m-auto">
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
+    <div className="momentList m-auto">
+      <Marquee gradientColor={marqueeBg} speed={30} pauseOnHover={true}>
         {props.moments.map((moment) => (
           <MomentItem
             key={moment.id}
@@ -22,8 +20,19 @@ const MomentsList = (props) => {
             title={moment.title}
             description={moment.description}
           />
-        ))}  
-      </Masonry>
+        ))}
+      </Marquee>
+
+      <Marquee gradientColor={marqueeBg} speed={30} pauseOnHover={true} direction={'right'}>
+        {props.moments.map((moment) => (
+          <MomentItem
+            key={moment.id}
+            image={moment.image}
+            title={moment.title}
+            description={moment.description}
+          />
+        ))}
+      </Marquee>
     </div>
   );
 };

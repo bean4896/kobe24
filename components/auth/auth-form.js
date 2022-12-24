@@ -65,14 +65,6 @@ function AuthForm() {
   return (
     <>
       <div className="flex flex-col m-auto">
-        <blockquote className="text-2xl font-semibold italic text-center text-neutral-900 dark:text-neutral-200 mb-5">
-          dasdas
-          <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-            <span class="relative text-white">Badge</span>
-          </span>
-          XXXXX
-        </blockquote>
-
         <div className="flex lg:flex-row flex-col max-w-[900px] bg-white dark:bg-[#1e1e1e] rounded-lg">
           <div className="mx-auto w-full p-10 rounded-md">
             <h2 className="mb-3">{isLogin ? "Login" : "Sign Up"}</h2>

@@ -29,7 +29,7 @@ const Moments = (props) => {
 
   return (
     <>
-      <div className="w-full mx-auto my-10 ">
+      <div className="w-full mx-auto my-10">
         <button className="momentBtn bg-purple-700 px-4 text-yellow-400" onClick={modalHandler}>
           Moment
         </button>
