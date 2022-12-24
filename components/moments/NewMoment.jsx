@@ -73,10 +73,10 @@ function NewMoment(props) {
     <>
       <div className="backdrop" onClick={props.onClose}></div>
       <div className="modalMoment">
-        <div className="bg-white shadow-lg rounded-lg ">
+        <div className="bg-white dark:bg-[#1e1e1e] shadow-lg rounded-lg max-w-[90vw] m-auto">
           {/*close icon*/}
           <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-            <h3 className="text-3xl font-semibold">Add Mom</h3>
+            <h3 className="text-3xl font-semibold">Add Mo</h3>
             <button className="text-red-500" onClick={props.onClose}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,11 +95,11 @@ function NewMoment(props) {
             </button>
           </div>
           {/*form - Add*/}
-          <div className="flex items-center justify-center mt-5 px-12">
+          <div className="flex items-center justify-center mt-5 px-12 mb-5">
             <div className="mx-auto w-full">
               <form onSubmit={submitHandler} method="post">
                 <div className="form-control">
-                  <label htmlFor="title" className="block">
+                  <label htmlFor="title" className="block mb-2">
                     Title
                   </label>
                   <input
@@ -112,7 +112,7 @@ function NewMoment(props) {
                 </div>
 
                 <div className="form-control">
-                  <div className="mb-8">
+                  <div className="mb-4">
                     <input
                       type="file"
                       name="file"
@@ -124,23 +124,23 @@ function NewMoment(props) {
                     />
                     <label
                       htmlFor="file"
-                      className="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+                      className="relative flex items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-5 text-center"
                     >
                       <div>
-                        <span className="mb-2 block text-xl font-semibold text-[#000000] dark:text-neutral-50">
+                        <span className="mb-2 block text-md font-semibold text-[#000000] dark:text-neutral-50">
                           Drop Image Here
                         </span>
                         <span className="mb-2 block text-base font-medium text-[#6B7280] dark:text-[#ffffff]">
                           Or
                         </span>
-                        <span className="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#000000] dark:text-[#ffffff]">
+                        <span className="inline-flex rounded border border-[#e0e0e0] py-1 px-4 text-base font-medium text-[#000000] dark:text-[#ffffff]">
                           Browse
                         </span>
                       </div>
                     </label>
                   </div>
 
-                  <img className="rounded-md" src={imageSrc} alt={imageSrc} />
+                  <img className="rounded-md max-h-[100px]" src={imageSrc} alt={imageSrc} />
                   {/* {imageSrc && !uploadData && (
               <p>
                 <button>Upload Files</button>
@@ -152,7 +152,7 @@ function NewMoment(props) {
                 </div>
 
                 <div className="form-control">
-                  <label htmlFor="description" className="block">
+                  <label htmlFor="description" className="block mb-2">
                     Describe Your Moment
                   </label>
                   <textarea
@@ -164,7 +164,7 @@ function NewMoment(props) {
                   ></textarea>
                 </div>
                 <div className="form-actions mb-10">
-                  <button>Add Moment</button>
+                  <button className="gr-btn">Add Moment</button>
                 </div>
               </form>
             </div>

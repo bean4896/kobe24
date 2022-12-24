@@ -17,6 +17,7 @@ const Moments = (props) => {
     const data = await response.json();
     if (data.message === "moments inserted!") {
       alert("moment inserted successfully");
+      window.location.reload();
     }
     // go back to home page after submit new moment
     // router.push("/");
@@ -28,9 +29,9 @@ const Moments = (props) => {
 
   return (
     <>
-      <div className="w-full mx-auto">
-        <button className="momentBtn" onClick={modalHandler}>
-          Add Moment
+      <div className="w-full mx-auto my-10 ">
+        <button className="momentBtn bg-purple-700 px-4 text-yellow-400" onClick={modalHandler}>
+          Moment
         </button>
         {isAddingMoment && (
           <NewMoment onClose={modalHandler} onAddMoment={addMomentHandler} />
